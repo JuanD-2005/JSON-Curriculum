@@ -1,0 +1,176 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Resume",
+  "type": "object",
+  "required": ["meta", "labels", "basics", "summary", "education", "skills", "experience", "projects", "certifications"],
+  "additionalProperties": false,
+
+  "definitions": {
+    "localizedString": {
+      "type": "object",
+      "required": ["es", "en"],
+      "additionalProperties": false,
+      "properties": {
+        "es": { "type": "string", "minLength": 1 },
+        "en": { "type": "string", "minLength": 1 }
+      }
+    },
+    "localizedStringAllowEmpty": {
+      "type": "object",
+      "required": ["es", "en"],
+      "additionalProperties": false,
+      "properties": {
+        "es": { "type": "string" },
+        "en": { "type": "string" }
+      }
+    },
+    "localizedStringArray": {
+      "type": "object",
+      "required": ["es", "en"],
+      "additionalProperties": false,
+      "properties": {
+        "es": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+        "en": { "type": "array", "items": { "type": "string", "minLength": 1 } }
+      }
+    },
+    "tags": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "labelSet": {
+      "type": "object",
+      "required": ["education", "skills", "experience", "projects", "certifications", "technologies"],
+      "properties": {
+        "education": { "type": "string" },
+        "skills": { "type": "string" },
+        "experience": { "type": "string" },
+        "projects": { "type": "string" },
+        "certifications": { "type": "string" },
+        "technologies": { "type": "string" }
+      }
+    }
+  },
+
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": ["languages", "roles"],
+      "properties": {
+        "languages": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "enum": ["es", "en"] }
+        },
+        "roles": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["key", "label"],
+            "properties": {
+              "key": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+              "label": { "$ref": "#/definitions/localizedString" }
+            }
+          }
+        }
+      }
+    },
+
+    "labels": {
+      "type": "object",
+      "required": ["es", "en"],
+      "properties": {
+        "es": { "$ref": "#/definitions/labelSet" },
+        "en": { "$ref": "#/definitions/labelSet" }
+      }
+    },
+
+    "basics": {
+      "type": "object",
+      "required": ["name", "location", "phone", "email", "links"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "location": { "type": "string", "minLength": 1 },
+        "phone": { "type": "string", "pattern": "^\\+?[0-9 -]+$" },
+        "email": { "type": "string", "pattern": "^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$" },
+        "links": {
+          "type": "object",
+          "properties": {
+            "linkedin": { "type": "string" },
+            "github": { "type": "string" },
+            "portfolio": { "type": "string" }
+          }
+        }
+      }
+    },
+
+    "summary": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": { "$ref": "#/definitions/localizedString" }
+    },
+
+    "education": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["degree", "institution", "dates", "bullets"],
+        "properties": {
+          "degree": { "$ref": "#/definitions/localizedString" },
+          "institution": { "type": "string", "minLength": 1 },
+          "dates": { "$ref": "#/definitions/localizedString" },
+          "bullets": { "$ref": "#/definitions/localizedStringArray" }
+        }
+      }
+    },
+
+    "skills": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["category", "items"],
+        "properties": {
+          "category": { "$ref": "#/definitions/localizedString" },
+          "items": { "$ref": "#/definitions/localizedString" }
+        }
+      }
+    },
+
+    "experience": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["role", "org", "dates", "tags", "bullets"],
+        "properties": {
+          "role": { "$ref": "#/definitions/localizedString" },
+          "org": { "$ref": "#/definitions/localizedStringAllowEmpty" },
+          "dates": { "$ref": "#/definitions/localizedString" },
+          "tags": { "$ref": "#/definitions/tags" },
+          "bullets": { "$ref": "#/definitions/localizedStringArray" }
+        }
+      }
+    },
+
+    "projects": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["name", "subtitle", "tags", "bullets", "tech"],
+        "properties": {
+          "name": { "type": "string", "minLength": 1 },
+          "subtitle": { "$ref": "#/definitions/localizedString" },
+          "tags": { "$ref": "#/definitions/tags" },
+          "bullets": { "$ref": "#/definitions/localizedStringArray" },
+          "tech": { "$ref": "#/definitions/localizedString" }
+        }
+      }
+    },
+
+    "certifications": { "$ref": "#/definitions/localizedStringArray" }
+  }
+}

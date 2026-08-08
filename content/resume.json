@@ -1,0 +1,348 @@
+{
+  "meta": {
+    "languages": [
+      "es",
+      "en"
+    ],
+    "roles": [
+      {
+        "key": "web",
+        "label": {
+          "es": "Desarrollador Web y Móvil Full-Stack",
+          "en": "Full-Stack Web & Mobile Developer"
+        }
+      },
+      {
+        "key": "ia",
+        "label": {
+          "es": "Desarrollador Full-Stack (Web, Móvil, IA)",
+          "en": "Full-Stack Developer (Web, Mobile, AI)"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "es": {
+      "education": "Educación",
+      "skills": "Habilidades",
+      "experience": "Experiencia",
+      "projects": "Proyectos Destacados",
+      "certifications": "Certificaciones y Participación",
+      "technologies": "Tecnologías:"
+    },
+    "en": {
+      "education": "Education",
+      "skills": "Skills",
+      "experience": "Experience",
+      "projects": "Featured Projects",
+      "certifications": "Certifications & Participation",
+      "technologies": "Technologies:"
+    }
+  },
+  "basics": {
+    "name": "Juan Paredes",
+    "location": "San Cristóbal, Venezuela",
+    "phone": "+58 424-7836896",
+    "email": "jdpgparedes@gmail.com",
+    "links": {
+      "linkedin": "linkedin.com/in/juanparedesg",
+      "github": "github.com/JuanD-2005",
+      "portfolio": ""
+    }
+  },
+  "summary": {
+    "web": {
+      "es": "Estudiante de Ingeniería Informática (UNET, egreso 2027 — 1er lugar en Cuadro de Honor, GPA 8.34) con experiencia práctica full-stack (Python, React, Django, Node.js) y bases en Machine Learning. Mente analítica y apasionada por resolver problemas reales con tecnología.",
+      "en": "Computer Engineering student (UNET, expected 2027 — 1st place on the Honor Roll, 8.34 GPA) with hands-on full-stack experience (Python, React, Django, Node.js) and a foundation in Machine Learning. Analytical mindset, passionate about solving real problems with technology."
+    },
+    "ia": {
+      "es": "Estudiante de 8vo semestre de Ingeniería Informática (UNET) con honores. Experiencia en desarrollo full-stack (React, Node.js, Python) e integración de soluciones de IA, creando aplicaciones escalables, eficientes y centradas en el usuario.",
+      "en": "8th-semester Computer Engineering student (UNET) graduating with honors. Experience in full-stack development (React, Node.js, Python) and AI solution integration, building scalable, efficient, user-centered applications."
+    }
+  },
+  "education": [
+    {
+      "degree": {
+        "es": "Ingeniería Informática (8vo Semestre)",
+        "en": "Computer Engineering (8th Semester)"
+      },
+      "institution": "Universidad Nacional Experimental del Táchira (UNET)",
+      "dates": {
+        "es": "Sept 2022 – 2027",
+        "en": "Sept 2022 – 2027"
+      },
+      "bullets": {
+        "es": [
+          "Promedio: 8.34/9.",
+          "1.er Lugar en Cuadro de Honor: Ciclo Profesional (Lapsos 2024-3, 2025-1) y Ciclo Básico (Lapsos 2024-1, 2022-3)."
+        ],
+        "en": [
+          "GPA: 8.34/9.",
+          "1st Place on the Honor Roll: Professional Cycle (Terms 2024-3, 2025-1) and Basic Cycle (Terms 2024-1, 2022-3)."
+        ]
+      }
+    },
+    {
+      "degree": {
+        "es": "Inglés C1 - Competencia Profesional Completa",
+        "en": "English C1 - Full Professional Proficiency"
+      },
+      "institution": "Formación Permanente UNET",
+      "dates": {
+        "es": "2024",
+        "en": "2024"
+      },
+      "bullets": {
+        "es": [],
+        "en": []
+      }
+    }
+  ],
+  "skills": [
+    {
+      "category": {
+        "es": "Frontend & Móvil",
+        "en": "Frontend & Mobile"
+      },
+      "items": {
+        "es": "JavaScript/TypeScript, React, Next.js, Tailwind CSS, HTML5/CSS3, Kotlin, Android Studio.",
+        "en": "JavaScript/TypeScript, React, Next.js, Tailwind CSS, HTML5/CSS3, Kotlin, Android Studio."
+      }
+    },
+    {
+      "category": {
+        "es": "Backend & BD",
+        "en": "Backend & Databases"
+      },
+      "items": {
+        "es": "Python (Django), MySQL, Java, PostgreSQL, Node.js (Express), MongoDB, Firebase.",
+        "en": "Python (Django), MySQL, Java, PostgreSQL, Node.js (Express), MongoDB, Firebase."
+      }
+    },
+    {
+      "category": {
+        "es": "Herramientas & DevOps",
+        "en": "Tools & DevOps"
+      },
+      "items": {
+        "es": "Docker, Git/GitHub Actions, RESTful APIs, Notion, Figma, Articulate Storyline 360.",
+        "en": "Docker, Git/GitHub Actions, RESTful APIs, Notion, Figma, Articulate Storyline 360."
+      }
+    },
+    {
+      "category": {
+        "es": "IA & Machine Learning",
+        "en": "AI & Machine Learning"
+      },
+      "items": {
+        "es": "Python (TensorFlow, PyTorch, Scikit-Learn), AutoML, MATLAB.",
+        "en": "Python (TensorFlow, PyTorch, Scikit-Learn), AutoML, MATLAB."
+      }
+    },
+    {
+      "category": {
+        "es": "Idiomas",
+        "en": "Languages"
+      },
+      "items": {
+        "es": "Español (Nativo), Inglés (C1-Fluido), Francés (Básico).",
+        "en": "Spanish (Native), English (C1-Fluent), French (Basic)."
+      }
+    }
+  ],
+  "experience": [
+    {
+      "role": {
+        "es": "Desarrollador Freelance / Consultor Independiente",
+        "en": "Freelance Developer / Independent Consultant"
+      },
+      "org": {
+        "es": "",
+        "en": ""
+      },
+      "dates": {
+        "es": "2024 – Presente",
+        "en": "2024 – Present"
+      },
+      "tags": [
+        "core"
+      ],
+      "bullets": {
+        "es": [
+          "Desarrollé aplicaciones web full-stack con interfaces eficientes (**React, Next.js**) y UI/UX optimizada.",
+          "Diseñé APIs RESTful y bases escalables (**Node.js, PostgreSQL, MongoDB**), garantizando seguridad de datos.",
+          "Gestioné el ciclo de vida del producto y automaticé flujos de despliegue (**Git, Docker, GitHub Actions**)."
+        ],
+        "en": [
+          "Built full-stack web applications with efficient interfaces (**React, Next.js**) and optimized UI/UX.",
+          "Designed RESTful APIs and scalable databases (**Node.js, PostgreSQL, MongoDB**), ensuring data security.",
+          "Managed the product lifecycle and automated deployment pipelines (**Git, Docker, GitHub Actions**)."
+        ]
+      }
+    },
+    {
+      "role": {
+        "es": "Docente Técnico",
+        "en": "Technical Instructor"
+      },
+      "org": {
+        "es": "UNET - Formación Permanente",
+        "en": "UNET - Continuing Education"
+      },
+      "dates": {
+        "es": "2024 – Presente",
+        "en": "2024 – Present"
+      },
+      "tags": [
+        "core"
+      ],
+      "bullets": {
+        "es": [
+          "Instructor de Programación: diseño y ejecución del curso **\"Programación Orientada a Juegos\"** para jóvenes talentos (próxima cohorte: 21 de agosto de 2026).",
+          "Preparador de Matemáticas I: resolución de problemas lógicos y apoyo pedagógico para estudiantes de ingeniería."
+        ],
+        "en": [
+          "Programming Instructor: designed and taught the **\"Game-Oriented Programming\"** course for young talent (next cohort: August 21, 2026).",
+          "Math I Tutor: supported engineering students with logical problem-solving and pedagogical guidance."
+        ]
+      }
+    },
+    {
+      "role": {
+        "es": "Desarrollador E-Learning (Contrato)",
+        "en": "E-Learning Developer (Contract)"
+      },
+      "org": {
+        "es": "BeeLearnStudio",
+        "en": "BeeLearnStudio"
+      },
+      "dates": {
+        "es": "02/2026 – 04/2026",
+        "en": "02/2026 – 04/2026"
+      },
+      "tags": [
+        "core"
+      ],
+      "bullets": {
+        "es": [
+          "Desarrollé y maqueté 6 módulos de aprendizaje interactivos para 2 proyectos utilizando Articulate Storyline 360.",
+          "Creé experiencias de usuario dinámicas, integrando multimedia profesional para entornos educativos."
+        ],
+        "en": [
+          "Developed and built 6 interactive learning modules across 2 projects using Articulate Storyline 360.",
+          "Created dynamic user experiences, integrating professional multimedia for educational settings."
+        ]
+      }
+    }
+  ],
+  "projects": [
+    {
+      "name": "Portal Académico EVEM & DIM 2026",
+      "subtitle": {
+        "es": "Desarrollo Full-Stack",
+        "en": "Full-Stack Development"
+      },
+      "tags": [
+        "core"
+      ],
+      "bullets": {
+        "es": [
+          "Desarrollo de portal oficial y sistema integral de registro masivo para evento académico nacional (UNET/ULA).",
+          "Gestión exitosa del registro de más de 100 usuarios mediante la implementación de bases de datos relacionales."
+        ],
+        "en": [
+          "Built the official portal and a full mass-registration system for a national academic event (UNET/ULA).",
+          "Successfully managed registration for 100+ users through a relational database implementation."
+        ]
+      },
+      "tech": {
+        "es": "PHP, MySQL, Vanilla JavaScript, HTML/CSS, jsPDF, APIs RESTful.",
+        "en": "PHP, MySQL, Vanilla JavaScript, HTML/CSS, jsPDF, RESTful APIs."
+      }
+    },
+    {
+      "name": "Obsidian AI Agent (RAG Local)",
+      "subtitle": {
+        "es": "Arquitectura de Software & IA",
+        "en": "Software Architecture & AI"
+      },
+      "tags": [
+        "ia"
+      ],
+      "bullets": {
+        "es": [
+          "Desarrollo de plugin con pipeline RAG (embeddings, vector store) procesado 100% en local sin APIs externas.",
+          "Diseño de interfaces agnósticas de proveedor para integrar modelos de lenguaje mediante abstracciones."
+        ],
+        "en": [
+          "Built a plugin with a RAG pipeline (embeddings, vector store) running 100% locally with no external APIs.",
+          "Designed provider-agnostic interfaces to integrate language models through clean abstractions."
+        ]
+      },
+      "tech": {
+        "es": "Node.js, TypeScript, Ollama (LLMs locales), Orama.",
+        "en": "Node.js, TypeScript, Ollama (local LLMs), Orama."
+      }
+    },
+    {
+      "name": "DJANGO-UNETX",
+      "subtitle": {
+        "es": "Desarrollo Full-Stack",
+        "en": "Full-Stack Development"
+      },
+      "tags": [
+        "web"
+      ],
+      "bullets": {
+        "es": [
+          "Diseñé un clon de Twitter universitario con actualizaciones asíncronas vía HTMX, reduciendo latencia y mejorando la fluidez sin recargas.",
+          "Estructuré un backend escalable en Django capaz de soportar interacciones concurrentes de forma segura."
+        ],
+        "en": [
+          "Designed a university Twitter clone with asynchronous updates via HTMX, cutting latency and improving fluidity without page reloads.",
+          "Structured a scalable Django backend able to safely handle concurrent interactions."
+        ]
+      },
+      "tech": {
+        "es": "Django, Python, HTML, CSS, JavaScript.",
+        "en": "Django, Python, HTML, CSS, JavaScript."
+      }
+    },
+    {
+      "name": "MIUNET",
+      "subtitle": {
+        "es": "Aplicación Móvil",
+        "en": "Mobile Application"
+      },
+      "tags": [
+        "core"
+      ],
+      "bullets": {
+        "es": [
+          "Desarrollé una app nativa en Kotlin para gestión académica, centralizando la información en una interfaz intuitiva.",
+          "Integré sincronización en tiempo real con Firebase, garantizando la disponibilidad de datos en conexiones inestables."
+        ],
+        "en": [
+          "Built a native Kotlin app for academic management, centralizing information in an intuitive interface.",
+          "Integrated real-time sync with Firebase, ensuring data availability over unstable connections."
+        ]
+      },
+      "tech": {
+        "es": "Kotlin, Firebase, Android Studio.",
+        "en": "Kotlin, Firebase, Android Studio."
+      }
+    }
+  ],
+  "certifications": {
+    "es": [
+      "Reconocimiento: Diseño Web para la campaña \"UNO CAMBIA EL MUNDO\", Rotary Club San Cristóbal (2025).",
+      "Ponente y Participante: Hackathon de Desarrollo de Software, Hello World Cup UNET (2025).",
+      "Reconocimiento: Proyecto Científico, Festival de la Ciencia UNET y Fundacite (2025)."
+    ],
+    "en": [
+      "Recognition: Web Design for the \"ONE CHANGES THE WORLD\" campaign, Rotary Club San Cristóbal (2025).",
+      "Speaker & Participant: Software Development Hackathon, Hello World Cup UNET (2025).",
+      "Recognition: Scientific Project, UNET & Fundacite Science Festival (2025)."
+    ]
+  }
+}

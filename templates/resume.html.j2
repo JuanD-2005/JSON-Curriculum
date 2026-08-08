@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+<meta charset="UTF-8">
+<title>{{ content.basics.name }} - CV</title>
+<style>{{ css }}</style>
+</head>
+<body>
+
+<header class="cv-header">
+  <div class="name-line">
+    <h1>{{ content.basics.name }}</h1>
+    <p class="title">{{ role_label }}</p>
+  </div>
+  <p class="contact">
+    {{ content.basics.location }} &nbsp;|&nbsp;
+    <a href="tel:{{ content.basics.phone | replace(' ', '') | replace('-', '') }}">{{ content.basics.phone }}</a> &nbsp;|&nbsp;
+    <a href="mailto:{{ content.basics.email }}">{{ content.basics.email }}</a>
+    {%- if content.basics.links.linkedin %} &nbsp;|&nbsp; <a href="https://{{ content.basics.links.linkedin }}">{{ content.basics.links.linkedin }}</a>{% endif -%}
+    {%- if content.basics.links.github %} &nbsp;|&nbsp; <a href="https://{{ content.basics.links.github }}">{{ content.basics.links.github }}</a>{% endif -%}
+    {%- if content.basics.links.portfolio %} &nbsp;|&nbsp; <a href="https://{{ content.basics.links.portfolio }}">{{ content.basics.links.portfolio }}</a>{% endif -%}
+  </p>
+</header>
+
+<p class="summary">{{ content.summary[role][lang]|bold }}</p>
+
+<h2 class="section">{{ L.education }}</h2>
+{% for ed in content.education %}
+<div class="entry">
+  <div class="entry-heading">
+    <span class="role">{{ ed.degree[lang] }}, <span class="org">{{ ed.institution }}</span></span>
+    <span class="dates">{{ ed.dates[lang] }}</span>
+  </div>
+  {% if ed.bullets[lang] %}
+  <ul class="bullets">
+    {% for b in ed.bullets[lang] %}<li>{{ b|bold }}</li>{% endfor %}
+  </ul>
+  {% endif %}
+</div>
+{% endfor %}
+
+<h2 class="section">{{ L.skills }}</h2>
+<div class="skills-list">
+  {% for s in content.skills %}
+  <div class="entry"><span class="category">{{ s.category[lang] }}:</span> {{ s['items'][lang] }}</div>
+  {% endfor %}
+</div>
+
+<h2 class="section">{{ L.experience }}</h2>
+{% for e in content.experience %}
+{% if "core" in e.tags or role in e.tags %}
+<div class="entry">
+  <div class="entry-heading">
+    <span class="role">{{ e.role[lang] }}{% if e.org[lang] %}, <span class="org">{{ e.org[lang] }}</span>{% endif %}</span>
+    <span class="dates">{{ e.dates[lang] }}</span>
+  </div>
+  <ul class="bullets">
+    {% for b in e.bullets[lang] %}<li>{{ b|bold }}</li>{% endfor %}
+  </ul>
+</div>
+{% endif %}
+{% endfor %}
+
+<h2 class="section">{{ L.projects }}</h2>
+{% for p in content.projects %}
+{% if "core" in p.tags or role in p.tags %}
+<div class="entry">
+  <div class="entry-heading">
+    <span class="role">{{ p.name }} <span class="org">| {{ p.subtitle[lang] }}</span></span>
+  </div>
+  <ul class="bullets">
+    {% for b in p.bullets[lang] %}<li>{{ b|bold }}</li>{% endfor %}
+  </ul>
+  <div class="tech"><span class="tech-label">{{ L.technologies }}</span> {{ p.tech[lang] }}</div>
+</div>
+{% endif %}
+{% endfor %}
+
+<h2 class="section">{{ L.certifications }}</h2>
+<div class="certifications">
+  <ul class="bullets">
+    {% for c in content.certifications[lang] %}<li>{{ c|bold }}</li>{% endfor %}
+  </ul>
+</div>
+
+</body>
+</html>

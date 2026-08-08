@@ -1,0 +1,87 @@
+name: Build & Deploy Resume
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "content/**"
+      - "templates/**"
+      - "styles/**"
+      - "schema/**"
+      - "scripts/**"
+      - ".github/workflows/build-resume.yml"
+  workflow_dispatch: {} # permite lanzarlo manualmente desde la pestaña Actions
+
+permissions:
+  contents: write # para comitear los PDFs de vuelta a dist/
+  pages: write # para publicar en GitHub Pages
+  id-token: write # requerido por actions/deploy-pages
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # WeasyPrint necesita Pango/Cairo/GDK-Pixbuf en el sistema, no solo en pip
+      - name: Install system dependencies (WeasyPrint)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            libpango-1.0-0 libpangocairo-1.0-0 libpangoft2-1.0-0 \
+            libgdk-pixbuf2.0-0 libffi-dev shared-mime-info fonts-liberation
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      # Si el contenido es inválido, el workflow se detiene ACÁ — nunca se
+      # llega a generar ni publicar un PDF defectuoso.
+      - name: Validate content/resume.json
+        run: python3 scripts/validate.py
+
+      - name: Build all resume PDFs (every role x language)
+        run: python3 scripts/build.py
+
+      - name: Build GitHub Pages site (dist/ + index.html)
+        run: python3 scripts/build_site.py
+
+      - name: Upload PDFs as workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: resume-pdfs
+          path: dist/*.pdf
+
+      - name: Commit generated PDFs back to repo
+        run: |
+          git config user.name "resume-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add dist/*.pdf
+          git diff --staged --quiet && echo "Sin cambios en los PDFs" || \
+            git commit -m "chore: rebuild resume PDFs [skip ci]"
+          git push
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
