@@ -16,9 +16,9 @@
     {{ content.basics.location }} &nbsp;|&nbsp;
     <a href="tel:{{ content.basics.phone | replace(' ', '') | replace('-', '') }}">{{ content.basics.phone }}</a> &nbsp;|&nbsp;
     <a href="mailto:{{ content.basics.email }}">{{ content.basics.email }}</a>
-    {%- if content.basics.links.linkedin %} &nbsp;|&nbsp; <a href="https://{{ content.basics.links.linkedin }}">{{ content.basics.links.linkedin }}</a>{% endif -%}
-    {%- if content.basics.links.github %} &nbsp;|&nbsp; <a href="https://{{ content.basics.links.github }}">{{ content.basics.links.github }}</a>{% endif -%}
-    {%- if content.basics.links.portfolio %} &nbsp;|&nbsp; <a href="https://{{ content.basics.links.portfolio }}">{{ content.basics.links.portfolio }}</a>{% endif -%}
+    {%- if content.basics.links.linkedin %} &nbsp;|&nbsp; <a href="https://{{ content.basics.links.linkedin }}">LinkedIn</a>{% endif -%}
+    {%- if content.basics.links.github %} &nbsp;|&nbsp; <a href="https://{{ content.basics.links.github }}">GitHub</a>{% endif -%}
+    {%- if content.basics.links.portfolio and content.basics.links.portfolio.get(role) %} &nbsp;|&nbsp; <a href="https://{{ content.basics.links.portfolio[role] }}">Portfolio</a>{% endif -%}
   </p>
 </header>
 

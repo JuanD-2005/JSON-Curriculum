@@ -99,7 +99,21 @@ def validate_semantics(data):
     check_bullet_parity("education", data["education"])
 
     # 4) links no vacíos deben verse como un dominio real.
+    #    portfolio es un dict {rol: url}; linkedin/github son strings planos.
     for key, value in data["basics"]["links"].items():
+        if key == "portfolio":
+            for role, url in value.items():
+                if url and not DOMAIN_PATTERN.match(url):
+                    problems.append(
+                        f"basics.links.portfolio.{role} = '{url}' no parece un dominio válido "
+                        f"(formato esperado: 'dominio.com/ruta', sin 'https://')."
+                    )
+                if role not in role_keys:
+                    problems.append(
+                        f"basics.links.portfolio tiene la clave '{role}', que no es un rol "
+                        f"declarado en meta.roles (¿typo?)."
+                    )
+            continue
         if value and not DOMAIN_PATTERN.match(value):
             problems.append(
                 f"basics.links.{key} = '{value}' no parece un dominio válido "

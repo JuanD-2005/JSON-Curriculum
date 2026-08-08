@@ -99,7 +99,10 @@
           "properties": {
             "linkedin": { "type": "string" },
             "github": { "type": "string" },
-            "portfolio": { "type": "string" }
+            "portfolio": {
+              "type": "object",
+              "additionalProperties": { "type": "string" }
+            }
           }
         }
       }

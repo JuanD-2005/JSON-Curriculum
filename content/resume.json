@@ -47,7 +47,10 @@
     "links": {
       "linkedin": "linkedin.com/in/juanparedesg",
       "github": "github.com/JuanD-2005",
-      "portfolio": ""
+      "portfolio": {
+        "web": "",
+        "ia": ""
+      }
     }
   },
   "summary": {

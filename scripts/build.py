@@ -69,7 +69,11 @@ def render_one(content, role: str, lang: str, out_path: pathlib.Path):
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
     HTML(string=html_str, base_url=str(ROOT)).write_pdf(str(out_path))
-    print(f"OK  role={role} lang={lang} -> {out_path.relative_to(ROOT)}")
+    try:
+        shown_path = out_path.relative_to(ROOT)
+    except ValueError:
+        shown_path = out_path
+    print(f"OK  role={role} lang={lang} -> {shown_path}")
 
 
 def main():
